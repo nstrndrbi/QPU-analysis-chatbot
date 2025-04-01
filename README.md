@@ -1,11 +1,11 @@
-# QPC Analysis Chatbot
+# QPU Analysis Chatbot
 
-This project implements a sophisticated LLM-based chatbot for QPC (Quantum Processing Center) analysis. It uses LangChain and Hugging Face models to answer questions about QPC blocks, costs, and trends.
+This project implements a sophisticated LLM-based chatbot for QPU (Quantum Processing Unit) analysis. It uses LangChain and Hugging Face models to answer questions about QPC blocks, costs, and trends.
 
 ## Features
 
 - Interactive chat interface with LLM-powered responses
-- Analysis of QPC block activity 
+- Analysis of QPU block activity 
 - Cost impact analysis
 - Dynamic graph generation for cost trends
 - Agentic AI framework using LangChain
@@ -88,7 +88,7 @@ npm start
 
 The chatbot can answer questions like:
 
-- "Tell me the top 10 most active QPC blocks"
+- "Tell me the top 10 most active QPU blocks"
 - "What will happen to the cost if I only use Atom blocks?"
 - "Generate a graph to show the trend of daily costs"
 
