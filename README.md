@@ -1,6 +1,6 @@
 # QPU Analysis Chatbot
 
-This project implements a sophisticated LLM-based chatbot for QPU (Quantum Processing Unit) analysis. It uses LangChain and Hugging Face models to answer questions about QPC blocks, costs, and trends.
+This project implements a sophisticated LLM-based chatbot for QPU (Quantum Processing Unit) analysis. It uses LangChain and Hugging Face models to answer questions about QPU blocks, costs, and trends.
 
 ## Features
 
@@ -17,7 +17,7 @@ The project consists of:
 - **Backend**: FastAPI application with LangChain integration
 - **Frontend**: React-based chat interface
 - **LLM Integration**: Uses Hugging Face models for natural language understanding
-- **Data Processing**: Sample data processing for QPC analysis
+- **Data Processing**: Sample data processing for QPU analysis
 - **Visualization**: Dynamic graph generation using Matplotlib
 
 ## Getting Started
