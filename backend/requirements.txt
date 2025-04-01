@@ -1,0 +1,11 @@
+fastapi==0.103.1
+uvicorn==0.23.2
+langchain==0.0.267
+transformers==4.33.1
+torch==2.0.1
+pandas==2.1.0
+matplotlib==3.7.3
+seaborn==0.12.2
+python-multipart==0.0.6
+pydantic==2.3.0
+httpx==0.24.1
