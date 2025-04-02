@@ -61,6 +61,7 @@ const ChatInterface = () => {
       };
 
       setMessages(prevMessages => [...prevMessages, newBotMessage]);
+      console.log(messages);
     } catch (error) {
       console.error('Error sending message:', error);
       

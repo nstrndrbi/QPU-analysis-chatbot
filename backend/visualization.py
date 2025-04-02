@@ -7,7 +7,7 @@ import seaborn as sns
 
 def generate_trend_graph():
     # Get the daily costs data
-    daily_costs = get_daily_costs()
+    daily_costs = get_daily_costs()  # should return columns: 'date', 'total_daily_cost'
     
     # Convert to DataFrame
     df = pd.DataFrame(daily_costs)
@@ -18,7 +18,7 @@ def generate_trend_graph():
     
     # Create the plot
     plt.figure(figsize=(10, 6))
-    plt.plot(df['date'], df['total_cost'], marker='o', linewidth=2, color='#3366cc')
+    plt.plot(df['date'], df['total_daily_cost'], marker='o', linewidth=2, color='#3366cc')
     
     # Add labels and title
     plt.xlabel('Date')
@@ -26,7 +26,7 @@ def generate_trend_graph():
     plt.title('Trend of Daily Costs')
     
     # Format y-axis as currency
-    plt.gca().yaxis.set_major_formatter('${x:,.0f}')
+    plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'${x:,.0f}'))
     
     # Add grid
     plt.grid(True, linestyle='--', alpha=0.7)
@@ -37,7 +37,7 @@ def generate_trend_graph():
     # Tight layout
     plt.tight_layout()
     
-    # Create a temporary file to save the graph
+    # Save the graph to a temporary location
     temp_dir = tempfile.gettempdir()
     graph_path = os.path.join(temp_dir, 'daily_costs_trend.png')
     plt.savefig(graph_path, dpi=300, bbox_inches='tight')

@@ -3,6 +3,7 @@
 .venv
 env/
 venv/
+virutal/
 ENV/
 env.bak/
 venv.bak/
@@ -30,6 +31,7 @@ wheels/
 *.egg
 
 # Node.js
+/frontend/package-lock.json
 node_modules/
 coverage/
 build/
