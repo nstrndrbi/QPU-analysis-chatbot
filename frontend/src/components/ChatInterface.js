@@ -10,7 +10,7 @@ const ChatInterface = () => {
   const messagesEndRef = useRef(null);
 
   const suggestions = [
-    'Tell me the top 10 most active QPC blocks',
+    'Tell me the top 10 most active QPU blocks',
     'What will happen to the cost if I only use Atom blocks?',
     'Generate a graph to show the trend of daily costs'
   ];
@@ -83,7 +83,7 @@ const ChatInterface = () => {
       <div className="chat-messages">
         {messages.length === 0 ? (
           <div className="welcome-message">
-            <h2>Hello! How can I help you with QPC analysis today?</h2>
+            <h2>Hello! How can I help you with QPU analysis today?</h2>
             <div className="suggestions-container">
               {suggestions.map((suggestion, index) => (
                 <SuggestionChip 
@@ -117,7 +117,7 @@ const ChatInterface = () => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask about QPC blocks, costs, or trends..."
+          placeholder="Ask about QPU blocks, costs, or trends..."
           onKeyPress={(e) => e.key === 'Enter' && handleSend()}
           disabled={isLoading}
         />
