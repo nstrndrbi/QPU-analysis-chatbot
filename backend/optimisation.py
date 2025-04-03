@@ -63,7 +63,7 @@ def optimize_distribution(df):
     """
     # Apply the optimization function row by row
     optimal_results = df.apply(
-        lambda row: optimize_block_category(row['qpu_units'], row['workload_count']),
+        lambda row: optimize_block_category(row['new_blocks_total'], row['daily_workloads']),
         axis=1
     )
     df[['optimal_category', 'optimal_cost']] = pd.DataFrame(optimal_results.tolist(), index=df.index)
@@ -76,7 +76,7 @@ def compute_daily_total_cost(df, hours=24):
     """
     def block_daily_cost(row):
         # Use the optimal category computed by optimize_distribution
-        return compute_block_cost(row['qpu_units'], row['workload_count'], row['optimal_category'], hours)
+        return compute_block_cost(row['new_blocks_total'], row['daily_workloads'], row['optimal_category'], hours)
     
     df['daily_cost'] = df.apply(block_daily_cost, axis=1)
     total_cost = df['daily_cost'].sum()
@@ -85,12 +85,7 @@ def compute_daily_total_cost(df, hours=24):
 # Example usage:
 if __name__ == "__main__":
     # Replace the following dummy data with your CSV file loading if needed:
-    data = {
-        'block_id': [1, 2, 3],
-        'qpu_units': [1000, 5000, 2000],
-        'workload_count': [100, 50, 200]
-    }
-    df = pd.DataFrame(data)
+    df = pd.read_csv('./data/qpu_dataset_hybrid.csv')
     
     print("Before optimization:")
     print(df)
@@ -101,5 +96,10 @@ if __name__ == "__main__":
     print(df_optimized)
     
     # Compute total daily cost using the optimal category assignments
+    total_cost_before = df['total_daily_cost'].sum()
     total_cost = compute_daily_total_cost(df_optimized)
     print(f"\nTotal daily cost (optimized): ${total_cost:.2f}")
+    print(f"\nTotal daily cost (non optimized): ${total_cost_before:.2f}")
+    print(f"\nPercentage Saved): {100 - (total_cost_before / total_cost) * 100}")
+
+
