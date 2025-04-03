@@ -11,6 +11,7 @@ import json
 from llm_handler import init_llm
 from data_processor import get_top_active_qpc_blocks, analyze_cost_impact, get_daily_costs
 from visualization import generate_trend_graph
+from optimisation_strategies import optimize_block_mix, simulate_batch_scheduling, negotiate_costs
 
 # Define the tools our agent can use
 def get_tools():
@@ -29,6 +30,21 @@ def get_tools():
             name="Cost_Trend_Graph",
             func=generate_trend_graph,
             description="Useful for generating a graph showing the trend of daily costs"
+        ),
+        Tool(
+            name="Optimize_Block_Mix",
+            func=optimize_block_mix,
+            description="Estimates cost savings by increasing the ratio of Atom blocks to a target value"
+        ),
+        Tool(
+            name="Batch_Scheduling",
+            func=simulate_batch_scheduling,
+            description="Simulates cost savings by batching daily workloads into multi-day windows"
+        ),
+        Tool(
+            name="Negotiate_Costs",
+            func=negotiate_costs,
+            description="Estimates cost savings by negotiating a reduction in fixed cost components"
         )
     ]
     return tools
