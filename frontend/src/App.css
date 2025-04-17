@@ -1,18 +1,55 @@
 .App {
   display: flex;
-  flex-direction: column;
+  width: 100%;
   min-height: 100vh;
-  max-width: 1400px;
-  margin: 0 auto;
+
+  margin: 0;
+}
+
+/* Sidebar styling */
+.Sidebar {
+  width: 250px;
+  background-color: #4B0082;  /* Dark purple */
+  color: white;
+
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
 
+.Sidebar-tab {
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.Sidebar-tab:hover,
+.Sidebar-tab.active {
+  background-color: #6A0DAD;  /* Slightly lighter dark purple */
+}
+
+/* Content area */
+.ContentArea {
+  flex: 1;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header styling */
 .App-header {
   text-align: center;
+<<<<<<< HEAD
   padding: 30px 0;
+=======
+  padding: 20px 0;
+  background-color: #4B0082;  /* Dark purple */
+  color: white;
+>>>>>>> caa328f1faa2d7ffc5310d4311684d2c6d4a18a7
   border-bottom: 1px solid #e0e0e0;
   margin-bottom: 30px;
   background: linear-gradient(120deg, #2b5876, #4e4376);
@@ -56,6 +93,7 @@
 }
 
 .App-header h1 {
+<<<<<<< HEAD
   color: #ffffff;
   margin-bottom: 15px;
   font-weight: 700;
@@ -151,8 +189,17 @@
 @keyframes pulse {
   0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.8; }
   50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+=======
+  color: white;
+  margin-bottom: 10px;
 }
 
+.App-header p {
+  color: #ddd;
+>>>>>>> caa328f1faa2d7ffc5310d4311684d2c6d4a18a7
+}
+
+/* Main section styling */
 main {
   flex: 1;
   display: flex;
@@ -211,6 +258,7 @@ main {
   display: block;
 }
 
+/* Footer styling */
 footer {
   text-align: center;
   padding: 25px 0;
