@@ -6,8 +6,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>QPC Analysis Chatbot</h1>
-        <p>Ask questions about QPC blocks, costs, and trends</p>
+        <h1>QPU Analysis Chatbot</h1>
+        <p>Ask questions about QPU blocks, costs, and trends</p>
       </header>
       <main>
         <ChatInterface />
