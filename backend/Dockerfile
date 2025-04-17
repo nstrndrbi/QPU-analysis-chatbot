@@ -18,6 +18,8 @@ COPY . .
 # Create data directory
 RUN mkdir -p /app/data
 
+COPY data /app/data
+
 # Expose port
 EXPOSE 8000
 

@@ -7,7 +7,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>QPU Analysis Chatbot</h1>
+
         <p>Ask questions about QPU blocks, costs, and trends</p>
+
       </header>
       <main>
         <ChatInterface />

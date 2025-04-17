@@ -31,7 +31,9 @@ def get_sample_data():
     #         {"date": "2023-09-07", "total_cost": 15500},
     #     ]
     # }
-    sample_data = pd.read_csv('data/simulated_qpu_data_enhanced.csv')
+    #sample_data = pd.read_csv('data/simulated_qpu_data_enhanced.csv')
+    sample_data = pd.read_csv('data/qpu_dataset_hybrid.csv')
+    
     return sample_data
 
 def get_top_active_qpc_blocks():

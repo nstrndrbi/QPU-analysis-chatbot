@@ -42,7 +42,7 @@ AVAILABLE_MODELS = {
 }
 
 # Default model to use
-DEFAULT_MODEL = "gpt2"
+DEFAULT_MODEL = "google/flan-t5-large"
 
 # System prompt templates for different tasks
 SYSTEM_PROMPTS = {

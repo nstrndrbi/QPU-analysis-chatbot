@@ -12,7 +12,7 @@ services:
       - ./data:/app/data
     environment:
       - PYTHONUNBUFFERED=1
-    command: python main.py --data-path /app/data/simulated_qpu_data_enhanced.csv
+    command: python main.py --data-path /app/data/qpu_dataset_hybrid.csv
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/docs"]
       interval: 30s
