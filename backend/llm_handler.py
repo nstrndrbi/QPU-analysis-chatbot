@@ -7,7 +7,7 @@ from typing import List, Dict
 
 # Initialize the language model
 def init_llm():
-    model_id = "gpt2"  # You can replace with any preferred Hugging Face model
+    model_id = "meta-llama/Llama-3.2-11B-Vision-Instruct"  # You can replace with any preferred Hugging Face model
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     model = AutoModelForCausalLM.from_pretrained(model_id)
     
@@ -30,7 +30,7 @@ async def process_query_with_llm(query: str, history: List[Dict[str, str]]):
     
     # Create a template for the LLM prompt
     template = """
-    You are an AI assistant specialized in answering questions about QPC (Quantum Processing Center) blocks and cost analysis.
+    You are an AI assistant specialized in answering questions about QPU (Quantum Processing Unit) blocks and cost analysis.
     
     Chat History:
     {history}

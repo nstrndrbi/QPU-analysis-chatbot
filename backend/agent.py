@@ -9,17 +9,24 @@ from typing import List, Union, Any, Dict
 import json
 
 from llm_handler import init_llm
-from data_processor import get_top_active_qpc_blocks, analyze_cost_impact, get_daily_costs
-from visualization import generate_trend_graph
+from data_processor import (
+    get_top_active_qpc_blocks, 
+    analyze_cost_impact, 
+    get_daily_costs,
+    get_qpu_summary,
+    get_block_efficiency,
+    get_daily_workloads
+)
+from visualization import generate_trend_graph, generate_workloads_graph, generate_efficiency_graph
 from optimisation_strategies import optimize_block_mix, simulate_batch_scheduling, negotiate_costs
 
 # Define the tools our agent can use
 def get_tools():
     tools = [
         Tool(
-            name="QPC_Block_Activity",
+            name="QPU_Block_Activity",
             func=get_top_active_qpc_blocks,
-            description="Useful for finding the most active QPC blocks by number of workloads executed"
+            description="Useful for finding the most active QPU blocks by number of workloads executed"
         ),
         Tool(
             name="Cost_Analysis",
@@ -45,6 +52,32 @@ def get_tools():
             name="Negotiate_Costs",
             func=negotiate_costs,
             description="Estimates cost savings by negotiating a reduction in fixed cost components"
+        ),
+        # New tools
+        Tool(
+            name="QPU_Summary",
+            func=get_qpu_summary,
+            description="Returns summary statistics about QPU blocks and workloads (total blocks, avg workloads per block, etc.)"
+        ),
+        Tool(
+            name="Block_Efficiency",
+            func=get_block_efficiency,
+            description="Returns efficiency metrics for different block types including cost per workload"
+        ),
+        Tool(
+            name="Daily_Workloads",
+            func=get_daily_workloads,
+            description="Returns daily workload data for visualization purposes"
+        ),
+        Tool(
+            name="Workloads_Graph",
+            func=generate_workloads_graph,
+            description="Generates a graph showing daily workloads over time"
+        ),
+        Tool(
+            name="Efficiency_Graph",
+            func=generate_efficiency_graph,
+            description="Generates a graph showing block efficiency metrics over time"
         )
     ]
     return tools
@@ -99,7 +132,7 @@ def create_qpc_agent(llm=None):
     tools = get_tools()
     memory = ConversationBufferMemory(memory_key="chat_history")
     
-    template = """You are a QPC Analysis agent that can answer questions about Quantum Processing Center blocks and costs.
+    template = """You are a QPU Analysis agent that can answer questions about QPU blocks and costs.
 
 Available tools:
 {tools}

@@ -1,0 +1,245 @@
+.dashboard {
+  margin-bottom: 30px;
+}
+
+.dashboard-title {
+  display: flex;
+  align-items: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.dashboard-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+
+.dashboard-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.quantum-spinner {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.spinner-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-top: 3px solid #3498db;
+  border-left: 3px solid #3498db;
+  border-radius: 50%;
+  animation: spin-ring 1.5s linear infinite;
+}
+
+.spinner-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, #9b59b6 0%, rgba(155, 89, 182, 0.2) 60%, rgba(155, 89, 182, 0) 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse-core 2s ease-in-out infinite;
+}
+
+@keyframes spin-ring {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-core {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.8); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.stat-detail {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.block-type {
+  flex: 1;
+  min-width: 70px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.block-type:last-child {
+  margin-right: 0;
+}
+
+.block-type:hover {
+  transform: scale(1.05);
+}
+
+.block-type.atom {
+  border-left: 3px solid #3498db;
+}
+
+.block-type.photon {
+  border-left: 3px solid #9b59b6;
+}
+
+.block-type.spin {
+  border-left: 3px solid #e67e22;
+}
+
+.block-label {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin-bottom: 5px;
+}
+
+.block-value {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.efficiency-meter {
+  margin-top: 15px;
+}
+
+.efficiency-label {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #ecf0f1;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.efficiency-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #3498db;
+  text-align: right;
+}
+
+.quick-actions {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.quick-actions h4 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.action-button {
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.action-button .icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  color: #3498db;
+}
+
+.action-button:hover {
+  background: linear-gradient(135deg, #f5f7fa, #a1c4fd);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation for quantum elements */
+.quantum-anim {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.quantum-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(52, 152, 219, 0.4);
+  opacity: 0.5;
+  animation: quantum-float 15s infinite linear;
+}
+
+@keyframes quantum-float {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(calc(100vw - 10px), calc(100vh - 10px)) rotate(360deg);
+    opacity: 0;
+  }
+}

@@ -1,6 +1,15 @@
-numpy==2.2.4
+numpy==1.26.3
 pandas==2.2.3
 python-dateutil==2.9.0.post0
 pytz==2025.2
 six==1.17.0
 tzdata==2025.2
+uvicorn==0.34.0
+fastapi==0.115.12
+langchain==0.3.22
+langchain_community==0.3.20
+transformers==4.46.2
+torch==2.5.1
+matplotlib==3.7.1 
+openai==1.72.0
+seaborn==0.12.2

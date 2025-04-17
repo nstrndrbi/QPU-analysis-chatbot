@@ -12,9 +12,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-class QPCDataHandler:
+class QPUDataHandler:
     """
-    Handles loading, saving, and processing of QPC related data
+    Handles loading, saving, and processing of QPU related data
     """
     def __init__(self, data_path: Optional[str] = None):
         self.data_path = data_path
@@ -22,7 +22,7 @@ class QPCDataHandler:
         
     def load_data(self, force_reload: bool = False) -> Dict[str, Any]:
         """
-        Load QPC data from file or use mock data if file doesn't exist
+        Load QPU data from file or use mock data if file doesn't exist
         """
         if self._data is not None and not force_reload:
             return self._data
@@ -64,15 +64,15 @@ class QPCDataHandler:
     
     def _generate_mock_data(self) -> Dict[str, Any]:
         """
-        Generate mock data for QPC analysis
+        Generate mock data for QPU analysis
         """
-        # Generate QPC blocks data
-        qpc_blocks = []
+        # Generate QPU blocks data
+        QPU_blocks = []
         
         # Quantum blocks (higher cost, higher capacity)
         for i in range(1, 8):
-            qpc_blocks.append({
-                "id": f"qpc{i:03d}",
+            QPU_blocks.append({
+                "id": f"QPU{i:03d}",
                 "type": "Quantum",
                 "workloads_executed": 1000 + (i * 100) + (i * 50 * (i % 3)),
                 "cost_per_hour": 110 + (i * 5),
@@ -82,8 +82,8 @@ class QPCDataHandler:
             
         # Atom blocks (lower cost, lower capacity)
         for i in range(8, 15):
-            qpc_blocks.append({
-                "id": f"qpc{i:03d}",
+            QPU_blocks.append({
+                "id": f"QPU{i:03d}",
                 "type": "Atom",
                 "workloads_executed": 800 + (i * 30) + (i * 20 * (i % 4)),
                 "cost_per_hour": 40 + (i * 2),
@@ -124,18 +124,18 @@ class QPCDataHandler:
             })
         
         return {
-            "qpc_blocks": qpc_blocks,
+            "QPU_blocks": QPU_blocks,
             "daily_costs": daily_costs,
             "workload_history": workload_history,
             "last_updated": datetime.datetime.now().isoformat()
         }
     
-    def get_qpc_blocks_df(self) -> pd.DataFrame:
+    def get_QPU_blocks_df(self) -> pd.DataFrame:
         """
-        Return QPC blocks data as a pandas DataFrame
+        Return QPU blocks data as a pandas DataFrame
         """
         data = self.load_data()
-        return pd.DataFrame(data["qpc_blocks"])
+        return pd.DataFrame(data["QPU_blocks"])
     
     def get_daily_costs_df(self) -> pd.DataFrame:
         """
@@ -159,14 +159,14 @@ class QPCDataHandler:
         """
         Return top N blocks by specified metric
         """
-        df = self.get_qpc_blocks_df()
+        df = self.get_QPU_blocks_df()
         return df.sort_values(by=metric, ascending=False).head(n)
     
     def get_block_types_summary(self) -> pd.DataFrame:
         """
         Return summary statistics by block type
         """
-        df = self.get_qpc_blocks_df()
+        df = self.get_QPU_blocks_df()
         return df.groupby("type").agg({
             "workloads_executed": ["sum", "mean", "std"],
             "cost_per_hour": ["sum", "mean", "std"],
@@ -175,4 +175,4 @@ class QPCDataHandler:
         })
 
 # Create a singleton instance for easy import
-qpc_data_handler = QPCDataHandler()
+QPU_data_handler = QPUDataHandler()

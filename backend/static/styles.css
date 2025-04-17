@@ -1,0 +1,863 @@
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f5f7fb;
+  color: #333;
+  line-height: 1.6;
+}
+
+.app-container {
+  max-width: 1400px;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Header */
+.app-header {
+  background: linear-gradient(120deg, #2b5876, #4e4376);
+  padding: 40px 20px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-header:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./images/quantum-bg-pattern.png');
+  background-size: cover;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.app-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
+
+.app-header h1 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  margin: 0;
+}
+
+.header-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 10px auto 0;
+}
+
+.quantum-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  background: linear-gradient(45deg, #3498db, #9b59b6);
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+/* Quantum decorative elements */
+.quantum-decoration {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
+  z-index: 1;
+}
+
+.quantum-orbit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: spin 8s linear infinite;
+}
+
+.quantum-orbit:nth-child(2) {
+  width: 70%;
+  height: 70%;
+  left: 15%;
+  top: 15%;
+  animation-duration: 6s;
+  animation-direction: reverse;
+}
+
+.quantum-orbit:nth-child(3) {
+  width: 40%;
+  height: 40%;
+  left: 30%;
+  top: 30%;
+  animation-duration: 4s;
+}
+
+.quantum-core {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(circle, #ffffff, #3498db);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.8);
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Navigation */
+.main-nav {
+  display: flex;
+  padding: 0 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #fff;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #7f8c8d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-button svg {
+  margin-right: 8px;
+}
+
+.nav-button:hover {
+  color: #3498db;
+}
+
+.nav-button.active {
+  color: #3498db;
+}
+
+.nav-button.active:after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #3498db;
+}
+
+/* Main content */
+main {
+  padding: 30px 20px;
+}
+
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+/* Dashboard */
+.dashboard-section {
+  padding-bottom: 30px;
+}
+
+.dashboard-title {
+  display: flex;
+  align-items: center;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+}
+
+.dashboard-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card h3 {
+  margin-top: 0;
+  color: #2c3e50;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-card h3 svg, .dashboard-card h3 .icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: #3498db;
+}
+
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #3498db;
+  margin: 15px 0 5px;
+}
+
+.stat-label {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+/* Dashboard loading */
+.dashboard-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.quantum-spinner {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.spinner-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-top: 3px solid #3498db;
+  border-left: 3px solid #3498db;
+  border-radius: 50%;
+  animation: spin-ring 1.5s linear infinite;
+}
+
+.spinner-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, #9b59b6 0%, rgba(155, 89, 182, 0.2) 60%, rgba(155, 89, 182, 0) 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse-core 2s ease-in-out infinite;
+}
+
+/* Block details */
+.stat-detail {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.block-type {
+  flex: 1;
+  min-width: 70px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.block-type:last-child {
+  margin-right: 0;
+}
+
+.block-type:hover {
+  transform: scale(1.05);
+}
+
+.block-type.atom {
+  border-left: 3px solid #3498db;
+}
+
+.block-type.photon {
+  border-left: 3px solid #9b59b6;
+}
+
+.block-type.spin {
+  border-left: 3px solid #e67e22;
+}
+
+.block-label {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin-bottom: 5px;
+}
+
+.block-value {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+/* Efficiency meter */
+.efficiency-meter {
+  margin-top: 15px;
+}
+
+.efficiency-label {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #ecf0f1;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.efficiency-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #3498db;
+  text-align: right;
+}
+
+/* Quick actions */
+.quick-actions {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.quick-actions h4 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.action-button {
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.action-button .icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  color: #3498db;
+}
+
+.action-button:hover {
+  background: linear-gradient(135deg, #f5f7fa, #a1c4fd);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat section */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: relative;
+}
+
+.chat-header {
+  padding: 15px 20px;
+  background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.chat-header h3 svg {
+  margin-right: 10px;
+}
+
+.chat-status {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  background-image: url('./images/quantum-particles-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  position: relative;
+}
+
+.chat-input-container {
+  display: flex;
+  padding: 15px;
+  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
+}
+
+.chat-input-container input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+.chat-input-container input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.chat-input-container button {
+  margin-left: 10px;
+  padding: 0 24px;
+  height: 48px;
+  background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-input-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 210, 255, 0.2);
+}
+
+.chat-input-container button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.welcome-message {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-message h2 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.welcome-message:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./images/quantum-network.png');
+  background-size: cover;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.suggestions-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.suggestion-chip {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border-radius: 20px;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-chip:hover {
+  background-color: #bbdefb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Tools panel */
+.tools-panel {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.tools-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.tools-title svg {
+  margin-right: 8px;
+  color: #3498db;
+}
+
+.tools-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tool-button {
+  background-color: #f1f8fe;
+  border: 1px solid #d6eaff;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #3498db;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.tool-button:hover {
+  background-color: #e1f0ff;
+  transform: translateY(-2px);
+}
+
+/* Message styles for chat */
+.message {
+  display: flex;
+  margin-bottom: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message-content {
+  max-width: 70%;
+  padding: 15px;
+  border-radius: 18px;
+}
+
+.message.user .message-content {
+  background-color: #3498db;
+  color: white;
+  border-bottom-right-radius: 5px;
+}
+
+.message.bot .message-content {
+  background-color: #f2f3f5;
+  color: #333;
+  border-bottom-left-radius: 5px;
+}
+
+.message.error .message-content {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.message-text {
+  font-size: 16px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.message-graph {
+  margin-top: 15px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.message-graph img {
+  width: 100%;
+  display: block;
+}
+
+/* Loading indicators */
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #3498db;
+  border-radius: 50%;
+  margin: 0 5px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Footer */
+footer {
+  padding: 25px 20px;
+  background-color: #f9fafc;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo span {
+  margin-left: 10px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.footer-links {
+  display: flex;
+}
+
+.footer-links a {
+  margin: 0 15px;
+  color: #7f8c8d;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #3498db;
+}
+
+.footer-info {
+  text-align: right;
+  color: #7f8c8d;
+}
+
+.footer-info p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.copyright {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Animation keyframes */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(0.7); opacity: 0.5; }
+  50% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes spin-ring {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-core {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.8); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-container {
+    margin: 10px;
+    border-radius: 8px;
+  }
+  
+  .app-header {
+    padding: 30px 15px;
+  }
+  
+  .app-header h1 {
+    font-size: 2rem;
+  }
+  
+  .quantum-decoration {
+    display: none;
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .chat-container {
+    height: 60vh;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .footer-info {
+    text-align: center;
+  }
+  
+  .footer-links {
+    margin: 10px 0;
+    justify-content: center;
+  }
+}

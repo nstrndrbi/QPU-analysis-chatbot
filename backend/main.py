@@ -1,11 +1,11 @@
 """
-Main entry point for the QPC Analysis Chatbot backend
+Main entry point for the QPU Analysis Chatbot backend
 """
 import argparse
 import os
 import uvicorn
 import logging
-from data_handler import QPCDataHandler
+from data_handler import QPUDataHandler
 
 # Configure logging
 logging.basicConfig(
@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 def parse_args():
     """Parse command line arguments"""
-    parser = argparse.ArgumentParser(description="QPC Analysis Chatbot Backend")
+    parser = argparse.ArgumentParser(description="QPU Analysis Chatbot Backend")
     parser.add_argument(
         "--host", 
         type=str, 
@@ -38,7 +38,7 @@ def parse_args():
         "--data-path", 
         type=str, 
         default="./data/qpc_data.json", 
-        help="Path to QPC data JSON file"
+        help="Path to QPU data JSON file"
     )
     return parser.parse_args()
 
@@ -47,10 +47,10 @@ def main():
     args = parse_args()
     
     # Initialize data handler with provided data path
-    data_handler = QPCDataHandler(data_path=args.data_path)
+    data_handler = QPUDataHandler(data_path=args.data_path)
     data_handler.load_data()  # Pre-load data
     
-    logger.info(f"Starting QPC Analysis Chatbot backend on {args.host}:{args.port}")
+    logger.info(f"Starting QPU Analysis Chatbot backend on {args.host}:{args.port}")
     logger.info(f"Using data path: {args.data_path}")
     
     # Start the FastAPI server

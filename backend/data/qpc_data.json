@@ -1,0 +1,481 @@
+{
+  "qpc_blocks": [
+    {
+      "id": "qpc001",
+      "type": "Quantum",
+      "workloads_executed": 1150,
+      "cost_per_hour": 115,
+      "capacity": 330,
+      "uptime_percentage": 98.0
+    },
+    {
+      "id": "qpc002",
+      "type": "Quantum",
+      "workloads_executed": 1400,
+      "cost_per_hour": 120,
+      "capacity": 360,
+      "uptime_percentage": 98.5
+    },
+    {
+      "id": "qpc003",
+      "type": "Quantum",
+      "workloads_executed": 1300,
+      "cost_per_hour": 125,
+      "capacity": 390,
+      "uptime_percentage": 97.0
+    },
+    {
+      "id": "qpc004",
+      "type": "Quantum",
+      "workloads_executed": 1600,
+      "cost_per_hour": 130,
+      "capacity": 420,
+      "uptime_percentage": 98.5
+    },
+    {
+      "id": "qpc005",
+      "type": "Quantum",
+      "workloads_executed": 2000,
+      "cost_per_hour": 135,
+      "capacity": 450,
+      "uptime_percentage": 96.0
+    },
+    {
+      "id": "qpc006",
+      "type": "Quantum",
+      "workloads_executed": 1600,
+      "cost_per_hour": 140,
+      "capacity": 480,
+      "uptime_percentage": 98.5
+    },
+    {
+      "id": "qpc007",
+      "type": "Quantum",
+      "workloads_executed": 2050,
+      "cost_per_hour": 145,
+      "capacity": 510,
+      "uptime_percentage": 95.0
+    },
+    {
+      "id": "qpc008",
+      "type": "Atom",
+      "workloads_executed": 1040,
+      "cost_per_hour": 56,
+      "capacity": 270,
+      "uptime_percentage": 96.3
+    },
+    {
+      "id": "qpc009",
+      "type": "Atom",
+      "workloads_executed": 1250,
+      "cost_per_hour": 58,
+      "capacity": 285,
+      "uptime_percentage": 99.5
+    },
+    {
+      "id": "qpc010",
+      "type": "Atom",
+      "workloads_executed": 1500,
+      "cost_per_hour": 60,
+      "capacity": 300,
+      "uptime_percentage": 97.5
+    },
+    {
+      "id": "qpc011",
+      "type": "Atom",
+      "workloads_executed": 1790,
+      "cost_per_hour": 62,
+      "capacity": 315,
+      "uptime_percentage": 95.1
+    },
+    {
+      "id": "qpc012",
+      "type": "Atom",
+      "workloads_executed": 1160,
+      "cost_per_hour": 64,
+      "capacity": 330,
+      "uptime_percentage": 99.5
+    },
+    {
+      "id": "qpc013",
+      "type": "Atom",
+      "workloads_executed": 1450,
+      "cost_per_hour": 66,
+      "capacity": 345,
+      "uptime_percentage": 96.9
+    },
+    {
+      "id": "qpc014",
+      "type": "Atom",
+      "workloads_executed": 1780,
+      "cost_per_hour": 68,
+      "capacity": 360,
+      "uptime_percentage": 93.9
+    }
+  ],
+  "daily_costs": [
+    {
+      "date": "2025-03-18",
+      "total_cost": 10000,
+      "quantum_cost": 7000,
+      "atom_cost": 3000
+    },
+    {
+      "date": "2025-03-19",
+      "total_cost": 10900,
+      "quantum_cost": 7629,
+      "atom_cost": 3270
+    },
+    {
+      "date": "2025-03-20",
+      "total_cost": 11800,
+      "quantum_cost": 8260,
+      "atom_cost": 3540
+    },
+    {
+      "date": "2025-03-21",
+      "total_cost": 11200,
+      "quantum_cost": 7839,
+      "atom_cost": 3360
+    },
+    {
+      "date": "2025-03-22",
+      "total_cost": 12100,
+      "quantum_cost": 8470,
+      "atom_cost": 3630
+    },
+    {
+      "date": "2025-03-23",
+      "total_cost": 13000,
+      "quantum_cost": 9100,
+      "atom_cost": 3900
+    },
+    {
+      "date": "2025-03-24",
+      "total_cost": 12400,
+      "quantum_cost": 8680,
+      "atom_cost": 3720
+    },
+    {
+      "date": "2025-03-25",
+      "total_cost": 11200,
+      "quantum_cost": 7839,
+      "atom_cost": 3360
+    },
+    {
+      "date": "2025-03-26",
+      "total_cost": 12100,
+      "quantum_cost": 8470,
+      "atom_cost": 3630
+    },
+    {
+      "date": "2025-03-27",
+      "total_cost": 11500,
+      "quantum_cost": 8049,
+      "atom_cost": 3450
+    },
+    {
+      "date": "2025-03-28",
+      "total_cost": 12400,
+      "quantum_cost": 8680,
+      "atom_cost": 3720
+    },
+    {
+      "date": "2025-03-29",
+      "total_cost": 13300,
+      "quantum_cost": 9310,
+      "atom_cost": 3990
+    },
+    {
+      "date": "2025-03-30",
+      "total_cost": 12700,
+      "quantum_cost": 8890,
+      "atom_cost": 3810
+    },
+    {
+      "date": "2025-03-31",
+      "total_cost": 13600,
+      "quantum_cost": 9520,
+      "atom_cost": 4080
+    },
+    {
+      "date": "2025-04-01",
+      "total_cost": 12400,
+      "quantum_cost": 8680,
+      "atom_cost": 3720
+    },
+    {
+      "date": "2025-04-02",
+      "total_cost": 11800,
+      "quantum_cost": 8260,
+      "atom_cost": 3540
+    },
+    {
+      "date": "2025-04-03",
+      "total_cost": 12700,
+      "quantum_cost": 8890,
+      "atom_cost": 3810
+    },
+    {
+      "date": "2025-04-04",
+      "total_cost": 13600,
+      "quantum_cost": 9520,
+      "atom_cost": 4080
+    },
+    {
+      "date": "2025-04-05",
+      "total_cost": 13000,
+      "quantum_cost": 9100,
+      "atom_cost": 3900
+    },
+    {
+      "date": "2025-04-06",
+      "total_cost": 13900,
+      "quantum_cost": 9730,
+      "atom_cost": 4170
+    },
+    {
+      "date": "2025-04-07",
+      "total_cost": 14800,
+      "quantum_cost": 10360,
+      "atom_cost": 4440
+    },
+    {
+      "date": "2025-04-08",
+      "total_cost": 12100,
+      "quantum_cost": 8470,
+      "atom_cost": 3630
+    },
+    {
+      "date": "2025-04-09",
+      "total_cost": 13000,
+      "quantum_cost": 9100,
+      "atom_cost": 3900
+    },
+    {
+      "date": "2025-04-10",
+      "total_cost": 13900,
+      "quantum_cost": 9730,
+      "atom_cost": 4170
+    },
+    {
+      "date": "2025-04-11",
+      "total_cost": 13300,
+      "quantum_cost": 9310,
+      "atom_cost": 3990
+    },
+    {
+      "date": "2025-04-12",
+      "total_cost": 14200,
+      "quantum_cost": 9940,
+      "atom_cost": 4260
+    },
+    {
+      "date": "2025-04-13",
+      "total_cost": 15100,
+      "quantum_cost": 10570,
+      "atom_cost": 4530
+    },
+    {
+      "date": "2025-04-14",
+      "total_cost": 14500,
+      "quantum_cost": 10150,
+      "atom_cost": 4350
+    },
+    {
+      "date": "2025-04-15",
+      "total_cost": 13300,
+      "quantum_cost": 9310,
+      "atom_cost": 3990
+    },
+    {
+      "date": "2025-04-16",
+      "total_cost": 14200,
+      "quantum_cost": 9940,
+      "atom_cost": 4260
+    }
+  ],
+  "workload_history": [
+    {
+      "date": "2025-03-18",
+      "total_workloads": 5000,
+      "successful_workloads": 4800,
+      "failed_workloads": 200
+    },
+    {
+      "date": "2025-03-19",
+      "total_workloads": 5400,
+      "successful_workloads": 5175,
+      "failed_workloads": 225
+    },
+    {
+      "date": "2025-03-20",
+      "total_workloads": 5800,
+      "successful_workloads": 5550,
+      "failed_workloads": 250
+    },
+    {
+      "date": "2025-03-21",
+      "total_workloads": 6200,
+      "successful_workloads": 5925,
+      "failed_workloads": 275
+    },
+    {
+      "date": "2025-03-22",
+      "total_workloads": 6600,
+      "successful_workloads": 6300,
+      "failed_workloads": 300
+    },
+    {
+      "date": "2025-03-23",
+      "total_workloads": 7000,
+      "successful_workloads": 6675,
+      "failed_workloads": 325
+    },
+    {
+      "date": "2025-03-24",
+      "total_workloads": 7400,
+      "successful_workloads": 7050,
+      "failed_workloads": 350
+    },
+    {
+      "date": "2025-03-25",
+      "total_workloads": 5700,
+      "successful_workloads": 5465,
+      "failed_workloads": 235
+    },
+    {
+      "date": "2025-03-26",
+      "total_workloads": 6100,
+      "successful_workloads": 5840,
+      "failed_workloads": 260
+    },
+    {
+      "date": "2025-03-27",
+      "total_workloads": 6500,
+      "successful_workloads": 6215,
+      "failed_workloads": 285
+    },
+    {
+      "date": "2025-03-28",
+      "total_workloads": 6900,
+      "successful_workloads": 6590,
+      "failed_workloads": 310
+    },
+    {
+      "date": "2025-03-29",
+      "total_workloads": 7300,
+      "successful_workloads": 6965,
+      "failed_workloads": 335
+    },
+    {
+      "date": "2025-03-30",
+      "total_workloads": 7700,
+      "successful_workloads": 7340,
+      "failed_workloads": 360
+    },
+    {
+      "date": "2025-03-31",
+      "total_workloads": 8100,
+      "successful_workloads": 7715,
+      "failed_workloads": 385
+    },
+    {
+      "date": "2025-04-01",
+      "total_workloads": 6400,
+      "successful_workloads": 6130,
+      "failed_workloads": 270
+    },
+    {
+      "date": "2025-04-02",
+      "total_workloads": 6800,
+      "successful_workloads": 6505,
+      "failed_workloads": 295
+    },
+    {
+      "date": "2025-04-03",
+      "total_workloads": 7200,
+      "successful_workloads": 6880,
+      "failed_workloads": 320
+    },
+    {
+      "date": "2025-04-04",
+      "total_workloads": 7600,
+      "successful_workloads": 7255,
+      "failed_workloads": 345
+    },
+    {
+      "date": "2025-04-05",
+      "total_workloads": 8000,
+      "successful_workloads": 7630,
+      "failed_workloads": 370
+    },
+    {
+      "date": "2025-04-06",
+      "total_workloads": 8400,
+      "successful_workloads": 8005,
+      "failed_workloads": 395
+    },
+    {
+      "date": "2025-04-07",
+      "total_workloads": 8800,
+      "successful_workloads": 8380,
+      "failed_workloads": 420
+    },
+    {
+      "date": "2025-04-08",
+      "total_workloads": 7100,
+      "successful_workloads": 6795,
+      "failed_workloads": 305
+    },
+    {
+      "date": "2025-04-09",
+      "total_workloads": 7500,
+      "successful_workloads": 7170,
+      "failed_workloads": 330
+    },
+    {
+      "date": "2025-04-10",
+      "total_workloads": 7900,
+      "successful_workloads": 7545,
+      "failed_workloads": 355
+    },
+    {
+      "date": "2025-04-11",
+      "total_workloads": 8300,
+      "successful_workloads": 7920,
+      "failed_workloads": 380
+    },
+    {
+      "date": "2025-04-12",
+      "total_workloads": 8700,
+      "successful_workloads": 8295,
+      "failed_workloads": 405
+    },
+    {
+      "date": "2025-04-13",
+      "total_workloads": 9100,
+      "successful_workloads": 8670,
+      "failed_workloads": 430
+    },
+    {
+      "date": "2025-04-14",
+      "total_workloads": 9500,
+      "successful_workloads": 9045,
+      "failed_workloads": 455
+    },
+    {
+      "date": "2025-04-15",
+      "total_workloads": 7800,
+      "successful_workloads": 7460,
+      "failed_workloads": 340
+    },
+    {
+      "date": "2025-04-16",
+      "total_workloads": 8200,
+      "successful_workloads": 7835,
+      "failed_workloads": 365
+    }
+  ],
+  "last_updated": "2025-04-17T13:47:22.998849"
+}
